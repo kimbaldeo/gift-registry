@@ -7,6 +7,25 @@ The application is a meeting point between an online registtry and wishlist utli
 3. have guests contribute funds to their product wishlists
 4. update their wishlist
 
+### Models
+**User** Related to Products and Comments
+UserID		
+Name		
+Username	
+Password
+
+**Product** Related to User and Comments
+Name
+Amazon URL
+Cost
+Contributions
+
+**Comments** Related to Products and User
+Name
+Comment
+Timestamp
+
+
 ### User's Wishlist Page
 ![img](https://i.imgur.com/qVwIaIA.jpg)
 
@@ -18,3 +37,4 @@ The application is a meeting point between an online registtry and wishlist utli
 
 ### Contribution Form
 ![img](https://i.imgur.com/TYKDu8m.jpg)
+
