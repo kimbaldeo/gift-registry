@@ -1,5 +1,5 @@
 # Gift Registry
-The application is a meeting point between an online registtry and wishlist utlizing a React frontend, DynamoDB for the backend and product information from Amazon ([Rainforest API](https://www.rainforestapi.com/))
+The application is a meeting point between an online registry and wishlist utilizing a React frontend, DynamoDB for the backend and product information from Amazon ([Rainforest API](https://www.rainforestapi.com/)). Backend for the project can be found [here](https://github.com/kimbaldeo/giftreg-backend). 
 
 ## Users will be able to...
 1. create an account the holds wishlist data
