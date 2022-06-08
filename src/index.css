@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+/* Nav Bar */
 .header {
   margin: 2em 0 2em 2em;
   padding-bottom: 1em;
@@ -27,4 +28,11 @@ code {
 .content {
   margin: 2em;
   font-size: 1.5em;
+}
+
+/* Registration Page */
+
+.registration_message {
+  color: red;
+  font-size: 0.7em;
 }
