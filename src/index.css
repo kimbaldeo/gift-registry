@@ -12,20 +12,26 @@ code {
     monospace;
 }
 
-/* Nav Bar */
+/* Header */
+
 .header {
-  margin: 2em 0 2em 2em;
+  text-align: center;
+}
+
+/* Nav Bar */
+.nav_bar {
+  margin: 0 0 2em 2em;
   padding-bottom: 1em;
   border-bottom: 1px solid;
 }
 
-.header a {
+.nav_bar a {
   margin: 0 1em 0 1em;
   font-size: 1.2em;
   text-decoration: none;
 }
 
-.content {
+.nav_content {
   margin: 2em;
   font-size: 1.5em;
 }

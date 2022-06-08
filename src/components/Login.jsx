@@ -18,19 +18,13 @@ function Login(props) {
             return;
         }
         setErrorMessage(null);
-        
-        const requestConfig = {
-            header: {
-                'x-api-key': config.userAPIKey
-            }
-        }
 
         const requestBody = {
             username: username,
             password: password
         }
 
-        axios.post(loginURL, requestBody, requestConfig).then((response) => {
+        axios.post(loginURL, requestBody).then((response) => {
             setUserSession(response.data.user, response.data.token);
             props.history.push('/home');
         }).catch((error) => {
@@ -47,8 +41,8 @@ function Login(props) {
         <div>
             <form onSubmit={submitHandlerLogin}>
                 <h5>Login</h5>
-                username: <input type="text" value={username} onChange={event => setUsername(event.target.value)} /> <br/>
-                password: <input type="password" value={password} onChange={event => setPassword(event.target.value)} /> <br/>
+                username: <input type="text" value = {username} onChange = {event => setUsername(event.target.value)} /> <br/>
+                password: <input type="password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
                 <input type="submit" value="Login" />
             </form>
             {errorMessage && <p className = "message">{errorMessage}</p>}

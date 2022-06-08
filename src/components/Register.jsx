@@ -4,7 +4,7 @@ import config from "../config.json"
 
 const registerURL = config.regURL
 
-function Register() {
+function Register(props) {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [username, setUsername] = useState("")
@@ -18,18 +18,14 @@ function Register() {
             return
         }
 
-        const requestConfig = {
-            header: {
-                'x-api-key': config.userAPIKey
-            }
-        }
         const requestBody = {
             username: username,
             email: email, 
             name: name, 
             password: password
         }
-        axios.post(registerURL, requestBody, requestConfig).then(response => {
+
+        axios.post(registerURL, requestBody).then(response => {
             setMessage("Registration Successful")
         }).catch(error => {
             if (error.response.status === 401 || error.response.status === 403) {
@@ -51,7 +47,7 @@ function Register() {
                 password: <input type = "password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
                 <input type = "submit" value = "Register" />
             </form>
-            {message && <p classname = "register_message">{message}</p>}
+            {message && <p className = "register_message">{message}</p>}
         </div>
     )
 }
