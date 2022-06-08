@@ -4,10 +4,10 @@ import { getToken } from "../AuthServices"
 const PrivateRoute = ({ component: Component, ...rest}) => {
   return (
     <Route 
-      {...rest}
-      render={props => {
+        {...rest}
+        render = {props => {
         return getToken() ? <Component {...props} />
-        : <Redirect to={{ pathname: '/login'}} />
+        : <Redirect to = {{ pathname: '/login'}} />
       }}
     />
   )

@@ -3,13 +3,13 @@ import { getToken } from "../AuthServices"
 
 const PublicRoute = ({ component: Component, ...rest}) => {
     return (
-      <Route 
-        {...rest}
-        render={props => {
-          return !getToken() ? <Component {...props} />
-          : <Redirect to={{ pathname: '/premium-content'}} />
-        }}
-      />
+        <Route 
+            {...rest}
+            render = {props => {
+            return !getToken() ? <Component {...props} />
+            : <Redirect to={{ pathname: '/mylist'}} />
+            }}
+        />
     )
   }
   
