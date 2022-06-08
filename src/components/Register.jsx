@@ -1,7 +1,8 @@
 import {useState} from "react";
 import axios from 'axios'
+import config from "../config.json"
 
-const registerURL = {process.env.REACT_APP_REG_URL}
+const registerURL = config.regURL
 
 function Register() {
     const [name, setName] = useState("")
@@ -19,7 +20,7 @@ function Register() {
 
         const requestConfig = {
             header: {
-                'x-api-key': {process.env.REACT_APP_USER_API},
+                'x-api-key': config.userAPIKey
             }
         }
         const requestBody = {

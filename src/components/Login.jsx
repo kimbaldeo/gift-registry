@@ -1,8 +1,9 @@
 import {useState} from 'react'
 import axios from 'axios'
 import { setUserSession } from "./AuthServices"
+import config from "../config.json"
 
-const loginURL = {process.env.REACT_APP_LOG_URL}
+const loginURL = config.loginURL
 
 function Login(props) {
 
@@ -20,7 +21,7 @@ function Login(props) {
         
         const requestConfig = {
             header: {
-                'x-api-key': {process.env.REACT_APP_USER_API},
+                'x-api-key': config.userAPIKey
             }
         }
 
@@ -29,7 +30,7 @@ function Login(props) {
             password: password
         }
 
-        axios.post(loginAPIUrl, requestBody, requestConfig).then((response) => {
+        axios.post(loginURL, requestBody, requestConfig).then((response) => {
             setUserSession(response.data.user, response.data.token);
             props.history.push('/home');
         }).catch((error) => {

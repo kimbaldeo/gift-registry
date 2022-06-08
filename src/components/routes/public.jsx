@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Navigate, Route } from 'react-router-dom';
 import { getToken } from "../AuthServices"
 
 const PublicRoute = ({ component: Component, ...rest}) => {
@@ -7,7 +7,7 @@ const PublicRoute = ({ component: Component, ...rest}) => {
             {...rest}
             render = {props => {
             return !getToken() ? <Component {...props} />
-            : <Redirect to={{ pathname: '/mylist'}} />
+            : <Navigate to={{ pathname: '/mylist'}} />
             }}
         />
     )

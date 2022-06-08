@@ -1,4 +1,5 @@
 import { getUser, resetUserSession } from "../components/AuthServices"
+import AddItem from "../components/AddItem"
 
 function MyList(props) {
     const user = getUser()
@@ -13,6 +14,8 @@ function MyList(props) {
         <>
         <h3>Hello {}!</h3> 
         <input type = "button" value = "logout" onclick = {logoutHandler} />
+
+        <AddItem />
         </>
     )
 }

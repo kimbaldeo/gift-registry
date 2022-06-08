@@ -1,12 +1,13 @@
 import Nav from './components/Nav';
+import config from './config.json'
 import { getUser, getToken, setUserSession, resetUserSession } from './components/AuthServices';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
 
 function App() {
-  const verifyTokenURL = {process.env.REACT_APP_VERIFY_URL}
+  const verifyTokenURL = config.verifyURL
   const token = getToken()
   const [authenticating, setAuthenticating] = useState(true);
 
@@ -17,7 +18,7 @@ function App() {
 
     const requestConfig = {
       headers: {
-        'x-api-key': {REACT_APP_USER_API}
+        'x-api-key': config.userAPIKey
       }
     }
 
