@@ -10,7 +10,7 @@ function Register() {
     const [password, setPassword] = useState("")
     const [message, setMessage] = useState(null)
 
-    const submitHandler = (event) => {
+    const submitHandlerReg = (event) => {
         event.preventDefault();
         if (username.trim() === '' || email.trim() === '' || name.trim() === '' || password.trim() === '') {
             setMessage('All fields are required'); 
@@ -19,7 +19,7 @@ function Register() {
 
         const requestConfig = {
             header: {
-                'x-api-key': {process.env.REACT_APP_REG_API},
+                'x-api-key': {process.env.REACT_APP_USER_API},
             }
         }
         const requestBody = {
@@ -42,7 +42,7 @@ function Register() {
 
     return (
         <div>
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandlerReg}>
                 <h5>Register</h5>
                 name: <input type = "text" value = {name} onChange = {event => setName(event.target.value)} /> <br/>
                 email: <input type = "text" value={email} onChange = {event => setEmail(event.target.value)} /> <br/>
