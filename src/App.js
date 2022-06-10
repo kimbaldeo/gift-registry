@@ -2,6 +2,7 @@ import Nav from './components/Nav';
 import Header from './components/header';
 import Register from './components/Register';
 import Login from './components/Login';
+import AddItem from './components/AddItem';
 import config from './config.json'
 import { getUser, getToken, setUserSession, resetUserSession } from './components/AuthServices';
 import { useState, useEffect } from 'react';
@@ -47,7 +48,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Login />
+      <Nav />
+      <AddItem />
       
     </div>
   );

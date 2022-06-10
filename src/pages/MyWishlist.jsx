@@ -18,10 +18,10 @@ function MyList(props) {
 
     return (
         <>
-        <h3>Hello {}!</h3> 
+        <h3>Hello {name}!</h3> 
         <input type = "button" value = "logout" onclick = {logoutHandler} />
         <input type = "button" value = "Add Item" onclick = {addItemRoute}/>
-        
+
         {/* view my wishlist items */}
         </>
     )
