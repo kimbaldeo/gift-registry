@@ -12,12 +12,12 @@ const addItemURL = config.addItemURL
 function AddItem() {
     const [amazonURL, setAmazonURL] = useState("")
     const [productName, setProductName] = useState("")
-    const [message, setMessage] = useState("")
-    const [confirmMessage, setConfirmMessage] = useState(null)
+    const [note, setNote] = useState("")
+    const [message, setMessage] = useState(null)
 
     const itemSubmitHandler = (event) => {
         event.preventDefault();
-        if (amazonURL === '' || productName === '' || message === '') {
+        if (amazonURL === '' || productName === '' || note === '') {
             setMessage('All fields are required'); 
             return
         }
@@ -27,7 +27,7 @@ function AddItem() {
         const requestBody = {
             amazon_url: amazonURL,
             product_name: productName,
-            message: message,
+            message: note,
         }
 
         axios.post(addItemURL, requestBody).then(response => {
@@ -46,12 +46,13 @@ function AddItem() {
         <div className = "container">
             <form className = "form" onSubmit = {itemSubmitHandler} >
                 <h5>Add a gift to your registry</h5>
-                Amazon Product Link: <input className = "u-full-width" type = "text"  /> <br />
-                Product Name: <input className = "u-full-width" type = "text"  /> <br />
-                Message:<textarea className = "u-full-width" type = "text" /> <br />
+                Amazon Product Link: <input className = "u-full-width" type = "text" value = {amazonURL} onChange = {event => setAmazonURL(event.target.value)}/> <br />
+                Product Name: <input className = "u-full-width" type = "text" value = {productName} onChange = {event => setProductName(event.target.value)}/> <br />
+                Message:<textarea className = "u-full-width" type = "text" value = {note} onChange = {event => setNote(event.target.value)}/> <br />
                 <br />
-                <input type = "button" value = "Gift Me" className = "button-primary u-pull-right"/>
+                <input className = "button-primary u-pull-right" type = "button" value = "Gift Me" />
             </form>
+            {message && <p className = "message">{message}</p>}
         </div>
     )
 }

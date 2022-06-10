@@ -1,8 +1,9 @@
+import config from "../config.json"
 import {useState} from "react";
 import axios from 'axios'
 import 'react-skeleton-css/styles/skeleton.2.0.4.css'
 import 'react-skeleton-css/styles/normalize.3.0.2.css';
-import config from "../config.json"
+
 
 const registerURL = config.regURL
 
@@ -59,7 +60,7 @@ function Register(props) {
                 <br />
                 <input className = "u-pull-right" type = "button" value = "Register" />
             </form>
-            {message && <p className = "register_message">{message}</p>}
+            {message && <p className = "message">{message}</p>}
         </div>
     )
 }
