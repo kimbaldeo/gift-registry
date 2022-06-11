@@ -2,7 +2,7 @@
 function Header() {
     return (
         <header>
-            <h1 className = "header">Title</h1>
+            <h1 className = "header">PRESENT</h1>
         </header>
     )
 }

@@ -1,44 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300&family=Noto+Sans:wght@100&family=Questrial&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-/* Header */
-
-.header {
-  text-align: center;
-}
-
-/* Nav Bar */
-.nav_bar {
-  margin: 0 0 2em 2em;
-  padding-bottom: 1em;
-  border-bottom: 1px solid;
-}
-
-.nav_bar a {
-  margin: 0 1em 0 1em;
-  font-size: 1.2em;
-  text-decoration: none;
-}
-
-.nav_content {
-  margin: 2em;
-  font-size: 1.5em;
-}
-
-/* Registration Page */
-
-.registration_message {
+.message {
   color: red;
   font-size: 0.7em;
 }
+
+/* Header */
+.header {
+  text-align: center;
+  font-size: 3.5em;
+}
+
+/* Nav Bar */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.navlinks {
+  text-decoration: none;
+  color: #edf0f1;  
+  padding: 0 10px 0 10px;
+}
+
+#link {
+  color:#edf0f1;
+}
+
+/* Home Page */
+/* Registration Page */
+/* Login Page */
+/* Add Item Page */
+/* Wishlist Pages */
+
+

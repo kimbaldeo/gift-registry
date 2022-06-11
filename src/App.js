@@ -2,12 +2,16 @@ import Nav from './components/Nav';
 import Header from './components/header';
 import Register from './components/Register';
 import Login from './components/Login';
+import Home from './pages/Home';
 import AddItem from './components/AddItem';
+import UserWishlist from './pages/UserWishlist';
+import MyList from './pages/MyWishlist';
 import config from './config.json'
 import { getUser, getToken, setUserSession, resetUserSession } from './components/AuthServices';
-import { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
-import MyList from './pages/MyWishlist';
+// import PublicRoute from "./routes/public";
+// import PrivateRoute from "./routes/private";
 
 
 
@@ -49,10 +53,18 @@ function App() {
     <div className="App">
       <Header />
       <Nav />
-      <AddItem />
-      
+
+          <Routes>
+            <Route exact path = "/" component = {Home} />
+            <Route path = "/register" component = {Register} /> 
+            <Route path = "/login" component = {Login} />
+            <Route path = "/mylist" component = {MyList} />
+            <Route path = "/mylist/additem" component = {AddItem} />
+            <Route path = "/wishlist" component = {UserWishlist} />
+          </Routes>
     </div>
   );
 }
 
 export default App;
+// add back public and private routes

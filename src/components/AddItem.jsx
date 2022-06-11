@@ -6,13 +6,15 @@ import {useState} from "react";
 import 'react-skeleton-css/styles/skeleton.2.0.4.css'
 import 'react-skeleton-css/styles/normalize.3.0.2.css';
 
-const addItemURL = config.addItemURL
 
+const addItemURL = config.addItemURL
 
 function AddItem() {
     const [amazonURL, setAmazonURL] = useState("")
     const [productName, setProductName] = useState("")
     const [note, setNote] = useState("")
+    const [image, setImage] = useState("")
+    const [price, setPrice] = useState("")
     const [message, setMessage] = useState(null)
 
     const itemSubmitHandler = (event) => {
@@ -24,10 +26,32 @@ function AddItem() {
 
         getUser()
 
+        const fetchItemInfo = () => {
+            let params = {
+                api_key: config.rainforestAPIKey,
+                type: "product",
+                url: amazonURL
+            }
+
+            axios.get('https://api.rainforestapi.com/request', { params })
+                .then(response => {
+                    setImage(JSON.stringify(response.data.product.main_image));
+                    setPrice(JSON.stringify(response.data.product.buybox_winner.price.value));
+                })
+                .catch(error => {
+                    setMessage("Sorry could not retrieve item details from Amazon")
+                })
+        }
+
+        fetchItemInfo()
+
         const requestBody = {
-            amazon_url: amazonURL,
-            product_name: productName,
+            amazonURL: amazonURL,
+            productName: productName,
+            productImg: image,
             message: note,
+            price: price,
+            contributions: 0,
         }
 
         axios.post(addItemURL, requestBody).then(response => {
@@ -56,5 +80,7 @@ function AddItem() {
         </div>
     )
 }
+
+
 
 export default AddItem

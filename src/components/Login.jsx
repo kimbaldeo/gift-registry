@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { setUserSession } from "./AuthServices"
 import config from "../config.json"
@@ -40,17 +41,20 @@ function Login(props) {
     }
 
     return (
-        <div className = "container">
-            <form onSubmit={submitHandlerLogin}>
-                <h5>Login</h5>
-                <div className = "five columns">
-                    username: <input className = "u-full-width" type ="text" value = {username} onChange = {event => setUsername(event.target.value)} /> <br/>
-                    password: <input className = "u-full-width" type="password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
-                    <br />
-                    <input type = "button" value = "Login" />
-                </div>
-            </form>
-            {errorMessage && <p className = "message">{errorMessage}</p>}
+        <div className = "login">
+            <div className = "container">
+                <form onSubmit={submitHandlerLogin}>
+                    <h5>Login</h5>
+                    <div className = "five columns">
+                        username: <input className = "u-full-width" type ="text" value = {username} onChange = {event => setUsername(event.target.value)} /> <br/>
+                        password: <input className = "u-full-width" type="password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
+                        <br />
+                        <input type = "button" value = "Login" />
+                    </div>
+                </form>
+                {errorMessage && <p className = "message">{errorMessage}</p>}
+            </div>
+            <p>New User? Register <Link to = "/register" id= "link">here</Link></p>
         </div>
     )
 }
