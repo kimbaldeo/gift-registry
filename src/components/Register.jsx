@@ -2,7 +2,7 @@ import config from "../config.json"
 import {useState} from "react";
 import axios from 'axios'
 import 'react-skeleton-css/styles/skeleton.2.0.4.css'
-import 'react-skeleton-css/styles/normalize.3.0.2.css';
+import 'react-skeleton-css/styles/normalize.3.0.2.css'
 
 
 const registerURL = config.regURL
