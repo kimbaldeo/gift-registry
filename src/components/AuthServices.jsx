@@ -1,5 +1,5 @@
 module.exports = {
-    getUser: function() {
+    getUser: async function() {
       const user = sessionStorage.getItem('user');
 
       if (user === 'undefined' || !user) {
@@ -10,16 +10,16 @@ module.exports = {
       }
     },
   
-    getToken: function() {
+    getToken: async function() {
       return sessionStorage.getItem('token');
     },
   
-    setUserSession: function(user, token) {
+    setUserSession: async function(user, token) {
       sessionStorage.setItem('user', JSON.stringify(user));
       sessionStorage.setItem('token', token);
     },
   
-    resetUserSession: function() {
+    resetUserSession: async function() {
       sessionStorage.removeItem('user');
       sessionStorage.removeItem('token');
     }
