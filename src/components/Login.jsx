@@ -12,15 +12,15 @@ function Login(props) {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [errorMessage, setErrorMessage] = useState(null)
+    const [message, setMessage] = useState(null)
 
     const submitHandlerLogin = (event) => {
         event.preventDefault();
         if (username.trim() === '' || password.trim() === '') {
-            setErrorMessage('A username and password are required');
+            setMessage('A username and password are required');
             return;
         }
-        setErrorMessage(null);
+        setMessage(null);
 
         const requestBody = {
             username: username,
@@ -32,10 +32,10 @@ function Login(props) {
             props.history.push('/home');
         }).catch((error) => {
             if (error.response.status === 401 || error.response.status === 403) {
-              setErrorMessage(error.response.data.message);
+              setMessage(error.response.data.message);
             } 
             else {
-              setErrorMessage('Sorry, the server is currently down. Please try again later');
+              setMessage('Sorry, the server is currently down. Please try again later');
             }
         })
     }
@@ -49,12 +49,12 @@ function Login(props) {
                         username: <input className = "u-full-width" type ="text" value = {username} onChange = {event => setUsername(event.target.value)} /> <br/>
                         password: <input className = "u-full-width" type="password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
                         <br />
-                        <input type = "button" value = "Login" />
+                        <input type = "submit" value = "Login" />
                     </div>
                 </form>
-                {errorMessage && <p className = "message">{errorMessage}</p>}
+                {message && <p className = "message">{message}</p>}
             </div>
-            <p>New User? Register <Link to = "/register" id= "link">here</Link></p>
+            <p id = "reglink">New User? Register <Link to = "/register">here</Link></p>
         </div>
     )
 }

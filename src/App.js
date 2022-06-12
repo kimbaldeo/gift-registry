@@ -50,19 +50,20 @@ function App() {
   // }
 
   return (
+    <BrowserRouter>
     <div className="App">
       <Header />
       <Nav />
-
-          <Routes>
-            <Route exact path = "/" component = {Home} />
-            <Route path = "/register" component = {Register} /> 
-            <Route path = "/login" component = {Login} />
-            <Route path = "/mylist" component = {MyList} />
-            <Route path = "/mylist/additem" component = {AddItem} />
-            <Route path = "/wishlist" component = {UserWishlist} />
-          </Routes>
+      <Routes>
+        <Route exact path = "/" element={<Home />} />
+        <Route path = "/register" element={<Register />} /> 
+        <Route path = "/login" element={<Login />} />
+        <Route path = "/mylist" element={<MyList />} />
+        <Route path = "/mylist/additem" element={<AddItem />} />
+        <Route path = "/wishlist" element={<UserWishlist />} />
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 

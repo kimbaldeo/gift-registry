@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+// import {push as Menu} from "react-burger-menu"
 import { getUser } from "./AuthServices";
 
 function Nav() {
@@ -6,18 +8,20 @@ function Nav() {
     const user = getUser()
     const name = user !== "undefined" && user ? user.name : ""
 
+
     return (
         <div className = "navigation">
             <div className = "username">
                 <p>Hello {name}</p>
             </div>
-            <div className = "navlinks">
-                <Link to = "/" id = "link">Home</Link>
-                <Link to = "/login" id= "link">Login</Link>
-                <Link to = "/mylist" id= "link">My Page</Link>
+            <div className = "navlinks" >
+                <Link to = "/" className="menu-item">Home</Link>
+                <Link to = "/login" className="menu-item">Login</Link>
+                <Link to = "/mylist" className="menu-item">My Page</Link>
             </div>
         </div>
     )
 }
 
 export default Nav
+// pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }

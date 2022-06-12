@@ -8,8 +8,7 @@ import 'react-skeleton-css/styles/normalize.3.0.2.css'
 const registerURL = config.regURL
 
 function Register(props) {
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -17,16 +16,15 @@ function Register(props) {
 
     const submitHandlerReg = (event) => {
         event.preventDefault();
-        if (username.trim() === '' || email.trim() === '' || firstName.trim() === '' || lastName.trim() === '' || password.trim() === '') {
+        if (username.trim() === '' || email.trim() === '' || name.trim() === '' || password.trim() === '') {
             setMessage('All fields are required'); 
             return
         }
 
         const requestBody = {
             username: username,
-            email: email, 
-            firstName: firstName, 
-            lastName: lastName,
+            email: email,  
+            name: name,
             password: password
         }
 
@@ -46,19 +44,12 @@ function Register(props) {
         <div className = "container">
             <form onSubmit={submitHandlerReg}>
                 <h5>Register</h5>
-                <div className = "row">
-                    <div className = "six columns">
-                        first name: <input className = "u-full-width" type = "text" value = {firstName} onChange = {event => setFirstName(event.target.value)} />
-                    </div>
-                    <div className = "six columns">
-                        last name: <input className = "u-full-width" type = "text" value = {lastName} onChange = {event => setLastName(event.target.value)} />
-                    </div>
-                </div>
+                name: <input className = "u-full-width" type = "text" value = {name} onChange = {event => setName(event.target.value)} />
                 email: <input className = "u-full-width" type = "text" value={email} onChange = {event => setEmail(event.target.value)} /> <br/>
                 username: <input className = "u-full-width" type = "text" value={username} onChange = {event => setUsername(event.target.value)} /> <br/>
                 password: <input className = "u-full-width" type = "password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
                 <br />
-                <input className = "u-pull-right" type = "button" value = "Register" />
+                <input className = "u-pull-right" type = "submit" value = "Register" />
             </form>
             {message && <p className = "message">{message}</p>}
         </div>

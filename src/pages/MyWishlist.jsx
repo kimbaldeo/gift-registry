@@ -11,16 +11,17 @@ function MyList(props) {
     } 
 
     return (
-        <>
-        <h3>Welcome Back {name}! Are you getting ready to celebrate?</h3> 
-        <input type = "button" value = "logout" onclick = {logoutHandler} />
-        <div className = "wishlistItems">
+        <div className = "wishlist">
+            <h4>Welcome Back {name}! Are you getting ready to celebrate?</h4> 
+            <div id = "wishlist_buttons">
+                <input type = "button" value = "logout" onClick = {logoutHandler} />
+                <Link to = "/mylist/additem"><input type = "button" value = "Add Item" /></Link>
+            </div>
+            <div className = "wishlistItems">
             PUT WISHLIST ITEMS HERE
+            </div>
+        
         </div>
-        <input type = "button" value = "Add Item" onclick = {logoutHandler}/>
-
-        {/* view my wishlist items */}
-        </>
     )
 }
 

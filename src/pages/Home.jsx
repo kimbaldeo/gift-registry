@@ -1,7 +1,10 @@
+import Slideshow from "../components/Slideshow"
+
 function Home() {
     return (
         <>
-        <h1>Home Page</h1>
+        <h3></h3>
+        <Slideshow />
         </>
     )
 }
