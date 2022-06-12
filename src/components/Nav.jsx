@@ -14,10 +14,10 @@ function Nav() {
             <div className = "username">
                 <p>Hello {name}</p>
             </div>
-            <div className = "navlinks" >
-                <Link to = "/" className="menu-item">Home</Link>
-                <Link to = "/login" className="menu-item">Login</Link>
-                <Link to = "/mylist" className="menu-item">My Page</Link>
+            <div className = "navbar" >
+                <Link to = "/" className = "navlink">Home</Link>
+                <Link to = "/login" className = "navlink">Login</Link>
+                <Link to = "/mylist" className = "navlink">My Page</Link>
             </div>
         </div>
     )

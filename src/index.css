@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  /* background-color: #edf0f1; */
 }
 
 .message {
@@ -9,38 +10,54 @@ body {
   font-size: 0.7em;
 }
 
+.pagehead {
+  margin-bottom: 5em;
+}
+
 /* Header */
 .header {
   text-align: center;
-  font-size: 3.5em;
+  font-size: 4em;
+  color:black;
+  margin-bottom: 0.2em;
+}
+.header a {
+  text-decoration: none;
+  color: black
 }
 
 /* Nav Bar */
 .navigation {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(36, 123, 145);
+  padding: 0.4em 0.2em 0.1em 1em; 
+  max-height: 2em;
+  border-width: 0.25em;
+
+  border-color: #00BBf9;
+  color:#7b8487;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
+
 }
 
-.navlinks {
-  color:#edf0f1;
+.navlink {
   text-decoration: none;
+  color: #7b8487;
+  padding: 1.5em;
 }
 
 /* Home Page */
 
 /* Registration Page */
-#reglink {
-  margin-top: 2%;
-  margin-left: 20%;
-}
+
 
 /* Login Page */
+#reglink {
+  margin-top: 5%;
+}
+
 /* Add Item Page */
 /* Wishlist Pages */
 .wishlist {
@@ -61,7 +78,7 @@ body {
 
 .slide {
   display: inline-block;
-  height: 400px;
+  height: 450px;
   width: 100%;
   border-radius: 40px;
 }
@@ -76,10 +93,10 @@ body {
   border-radius: 50%;
   cursor: pointer;
   margin: 15px 7px 0px;
-  background-color: #c4c4c4;
+  background-color: #d8d5d5;
 }
 
 .slideshowDot.active {
-  background-color: #878787;
+  background-color: #b6b3b3;
 }
 

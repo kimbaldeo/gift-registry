@@ -1,5 +1,6 @@
 import config from "../config.json"
 import {useState} from "react";
+import {Link} from "react-router-dom"
 import axios from 'axios'
 import 'react-skeleton-css/styles/skeleton.2.0.4.css'
 import 'react-skeleton-css/styles/normalize.3.0.2.css'
@@ -50,6 +51,7 @@ function Register(props) {
                 password: <input className = "u-full-width" type = "password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
                 <br />
                 <input className = "u-pull-right" type = "submit" value = "Register" />
+                <p id = "loglink">Already a member? Login <Link to = "/login">here</Link></p>
             </form>
             {message && <p className = "message">{message}</p>}
         </div>

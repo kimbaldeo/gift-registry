@@ -50,11 +50,13 @@ function Login(props) {
                         password: <input className = "u-full-width" type="password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
                         <br />
                         <input type = "submit" value = "Login" />
+                        <p id = "reglink">New User? Register <Link to = "/register">here</Link></p>
                     </div>
+                    
                 </form>
                 {message && <p className = "message">{message}</p>}
             </div>
-            <p id = "reglink">New User? Register <Link to = "/register">here</Link></p>
+            
         </div>
     )
 }

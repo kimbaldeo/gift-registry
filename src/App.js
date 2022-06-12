@@ -52,8 +52,10 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <Header />
-      <Nav />
+      <div className = "pagehead">
+        <Header />
+        <Nav />
+      </div>
       <Routes>
         <Route exact path = "/" element={<Home />} />
         <Route path = "/register" element={<Register />} /> 
