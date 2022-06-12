@@ -50,10 +50,11 @@ function Register(props) {
                 username: <input className = "u-full-width" type = "text" value={username} onChange = {event => setUsername(event.target.value)} /> <br/>
                 password: <input className = "u-full-width" type = "password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
                 <br />
+                {message && <p className = "message">{message}</p>}
                 <input className = "u-pull-right" type = "submit" value = "Register" />
                 <p id = "loglink">Already a member? Login <Link to = "/login">here</Link></p>
             </form>
-            {message && <p className = "message">{message}</p>}
+            
         </div>
     )
 }

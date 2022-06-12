@@ -2,12 +2,13 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  color: black;
   /* background-color: #edf0f1; */
 }
 
 .message {
   color: red;
-  font-size: 0.7em;
+  font-size: 1em;
 }
 
 .pagehead {
@@ -22,8 +23,7 @@ body {
   margin-bottom: 0.2em;
 }
 .header a {
-  text-decoration: none;
-  color: black
+  all: unset;
 }
 
 /* Nav Bar */

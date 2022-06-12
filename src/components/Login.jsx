@@ -45,16 +45,18 @@ function Login(props) {
             <div className = "container">
                 <form onSubmit={submitHandlerLogin}>
                     <h5>Login</h5>
+                    
                     <div className = "five columns">
                         username: <input className = "u-full-width" type ="text" value = {username} onChange = {event => setUsername(event.target.value)} /> <br/>
                         password: <input className = "u-full-width" type="password" value = {password} onChange = {event => setPassword(event.target.value)} /> <br/>
                         <br />
+                        {message && <p className = "message">{message}</p>}
                         <input type = "submit" value = "Login" />
                         <p id = "reglink">New User? Register <Link to = "/register">here</Link></p>
                     </div>
                     
                 </form>
-                {message && <p className = "message">{message}</p>}
+                
             </div>
             
         </div>

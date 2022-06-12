@@ -76,9 +76,10 @@ function AddItem() {
                 Product Name: <input className = "u-full-width" type = "text" value = {productName} onChange = {event => setProductName(event.target.value)}/> <br />
                 Message:<textarea className = "u-full-width" type = "text" value = {note} onChange = {event => setNote(event.target.value)}/> <br />
                 <br />
+                {message && <p className = "message">{message}</p>}
                 <input className = "button-primary u-pull-right" type = "submit" value = "Gift Me" />
             </form>
-            {message && <p className = "message">{message}</p>}
+            
         </div>
     )
 }
