@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 const images = [
-    "#0088FE", "#00C49F", "#FFBB28"
+    "https://i.imgur.com/x93fTj6.jpg", "https://i.imgur.com/lhQY1vO.jpg", "https://i.imgur.com/g3wlmWA.jpg"
 ];
 
 function Slideshow() {
@@ -20,7 +20,7 @@ function Slideshow() {
             setIndex((prevIndex) =>
               prevIndex === images.length - 1 ? 0 : prevIndex + 1
             ),
-          delay
+          3000
         );
     
         return () => {resetTimeout()};

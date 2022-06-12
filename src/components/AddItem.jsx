@@ -64,6 +64,8 @@ function AddItem() {
                 setMessage("Sorry, experiencing server issues. Try again later")
             }
         })
+
+        // link to mylist?
     }
 
     return (
