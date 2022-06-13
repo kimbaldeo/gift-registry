@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from "react";
 
 function Slideshow() {
     const imgs = [
-        <img src = "https://i.imgur.com/x93fTj6.jpg" />, <img src = "https://i.imgur.com/lhQY1vO.jpg" />, <img src = "https://i.imgur.com/g3wlmWA.jpg" />
-    ];
+       "https://i.imgur.com/2ciQAwM.png", "https://i.imgur.com/wYfGjQ7.png", "https://i.imgur.com/jjJSfLf.png", "https://i.imgur.com/S30IbOa.png"
+    ]
+
     const delay = 2700;
 
     const [index, setIndex] = useState(0);
@@ -31,17 +32,15 @@ function Slideshow() {
     }, [index]);
 
     return (
-        <div className="slideshow">
+        <div className = "slideshow">
         <div
             className="slideshowSlider"
             style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
-            {imgs.map((backgroundColor, index) => (
-            <div
-                className="slide"
-                key={index}
-                style={{ backgroundColor }}
-            ></div>
+            {imgs.map((img, index) => (
+            <div className="slide" key={index}>
+                <img src = {img} />
+            </div>
             ))}
         </div>
 

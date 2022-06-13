@@ -35,7 +35,7 @@ body {
   border-top: solid;
   border-width: 1px;
   border-color: #253d45;
-  color:#919a9d;
+  color:#7b8487;
 }
 
 .navbar {
@@ -95,9 +95,9 @@ p#price {
 
 /* Slideshow */
 .slideshow {
+  justify-content: center;
   margin: 0 auto;
   overflow: hidden;
-  max-width: 500px;
 }
 
 .slideshowSlider {
@@ -107,6 +107,7 @@ p#price {
 
 .slide {
   display: inline-block;
+  justify-content: center;
   height: 450px;
   width: 100%;
   border-radius: 40px;
@@ -127,5 +128,6 @@ p#price {
 
 .slideshowDot.active {
   background-color: #b6b3b3;
+  justify-content: center;
 }
 
