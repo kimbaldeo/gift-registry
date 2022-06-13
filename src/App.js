@@ -9,16 +9,21 @@ import MyList from './pages/MyWishlist';
 import config from './config.json'
 import { getUser, getToken, setUserSession, resetUserSession } from './components/AuthServices';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import axios from 'axios';
-// import PublicRoute from "./routes/public";
-// import PrivateRoute from "./routes/private";
+import { useState, useEffect } from 'react';
+// import PublicRoute from './components/routes/public';
+// import PrivateRoute from "./components/routes/private"
 
 
 
 function App() {
+
+  const user = getUser()
+  const username = user !== "undefined" && user ? user.username : ""
+
   // const verifyTokenURL = config.verifyURL
   // const token = getToken()
   // const [authenticating, setAuthenticating] = useState(true);
+  
 
   // useEffect(() => {
   //   if (token === 'undefined' || token === undefined || token === null || !token) {
@@ -46,23 +51,23 @@ function App() {
   // }, []);
 
   // if (authenticating && token) {
-  //   return <div className="content">authenticating...</div>
+  //   return <div className = "content">authenticating...</div>
   // }
 
   return (
     <BrowserRouter>
-    <div className="App">
+    <div className = "App">
       <div className = "pagehead">
         <Header />
         <Nav />
       </div>
       <Routes>
-        <Route exact path = "/" element={<Home />} />
+        <Route path = "/" element={<Home />} />
         <Route path = "/register" element={<Register />} /> 
         <Route path = "/login" element={<Login />} />
         <Route path = "/mylist" element={<MyList />} />
         <Route path = "/mylist/additem" element={<AddItem />} />
-        <Route path = "/wishlist" element={<UserWishlist />} />
+        <Route path = {`/${username}`} element={<UserWishlist />} />
       </Routes>
     </div>
     </BrowserRouter>

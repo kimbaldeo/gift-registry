@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 function Slideshow() {
     const imgs = [
-        "https://i.imgur.com/x93fTj6.jpg", "https://i.imgur.com/lhQY1vO.jpg", "https://i.imgur.com/g3wlmWA.jpg"
+        <img src = "https://i.imgur.com/x93fTj6.jpg" />, <img src = "https://i.imgur.com/lhQY1vO.jpg" />, <img src = "https://i.imgur.com/g3wlmWA.jpg" />
     ];
     const delay = 2700;
 

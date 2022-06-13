@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-// import {push as Menu} from "react-burger-menu"
 import { getUser } from "./AuthServices";
 
 function Nav() {
