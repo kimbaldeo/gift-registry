@@ -3,8 +3,9 @@ import Slideshow from "../components/Slideshow"
 function Home() {
     return (
         <>
-        <h3></h3>
+        
         <Slideshow />
+        <h3>Celebrate every moment, big or small</h3>
         </>
     )
 }

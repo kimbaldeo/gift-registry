@@ -49,6 +49,9 @@ body {
 }
 
 /* Home Page */
+h3 {
+  text-align: center;
+}
 
 /* Registration Page */
 
@@ -98,6 +101,7 @@ p#price {
   justify-content: center;
   margin: 0 auto;
   overflow: hidden;
+  max-width: 800px;
 }
 
 .slideshowSlider {
